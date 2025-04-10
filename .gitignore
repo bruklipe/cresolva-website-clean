@@ -48,3 +48,9 @@ next-env.d.ts
 /public/assets/*.gif
 /public/assets/*.svg
 /public/assets/*.webp
+
+# Netlify
+.netlify
+
+# Temporary directories
+/temp_media/

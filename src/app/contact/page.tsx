@@ -59,11 +59,8 @@ export default function Contact() {
     
     console.log('Sending form data:', formData);
     
-    // API URL - use environment variable if available or default to Render/Railway URL
-    const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://cresolva-email-server.onrender.com';
-    
-    // Use the external API server for both development and production
-    fetch(`${API_URL}/send-email`, {
+    // Use Netlify function instead of external API
+    fetch(`/.netlify/functions/send-email`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -167,12 +164,12 @@ export default function Contact() {
             loop 
             muted 
             playsInline
-            className="absolute inset-0 w-full h-full object-cover opacity-20"
+            className="absolute inset-0 w-full h-full object-cover opacity-50"
           >
-            <source src="/assets/12920674-hd-compressed.mp4" type="video/mp4" />
+            <source src="/assets/12920674-hd_1920_1080_30fps.mp4" type="video/mp4" />
           </video>
           {/* Overlay to ensure text readability */}
-          <div className="absolute inset-0 bg-black/60"></div>
+          <div className="absolute inset-0 bg-black/50"></div>
         </div>
         
         {/* Content */}

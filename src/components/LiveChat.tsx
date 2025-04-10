@@ -52,11 +52,8 @@ const LiveChat = ({ onClose, userName }: LiveChatProps) => {
     setIsTyping(true);
     
     try {
-      // API URL - use environment variable if available or default to Render/Railway URL
-      const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://cresolva-email-server.onrender.com';
-
-      // Send the message to our external API server
-      const response = await fetch(`${API_URL}/forward-chat`, {
+      // Use Netlify function instead of external API server
+      const response = await fetch(`/.netlify/functions/forward-chat`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
